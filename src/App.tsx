@@ -1,24 +1,29 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./scss/App.scss";
+import "normalize.css";
+import { BrowserRouter, Route } from "react-router-dom";
+import Header from "./views/Header";
+import Experience from "./views/Experience";
+import Career from "./views/Career";
+import Playground from "./views/Playground";
+import Me from "./views/Me";
+import NavMini from "./views/NavMini";
+import Nav from "./views/Nav";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Header />
+        <div>
+          <Route path="/experience" component={Experience} />
+          <Route path="/career" component={Career} />
+          <Route path="/playground" component={Playground} />
+          <Route path="/me" component={Me} />
+        </div>
+        <NavMini />
+        <Nav />
+      </BrowserRouter>
     </div>
   );
 }
