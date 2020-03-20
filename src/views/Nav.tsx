@@ -1,44 +1,46 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import NavTextLabel from "./Components/MenuButton";
+import MenuButton from "./Components/MenuButton";
 import { useHistory } from "react-router-dom";
 import classnames from "classnames";
 import EventEmitter, { Event } from "../utils/EventEmitter";
-// import "../fontello/css/fontello.css";
 
 const Nav = () => {
+  console.log("useEffect");
+  // const [isShow, setIsShow] = useState(true);
   const [prevPath, setPrevPath] = useState("");
   const history = useHistory();
-  const [isUnmouse, setIsUnmouse] = useState(false); // point events none before hide
-  const [isNone, setIsNone] = useState(false); // hide?
+  const [isUnmouse, setIsUnmouse] = useState(false); // 사라지기 전 마우스 액션이 통과할지 여부
+  const [isNone, setIsNone] = useState(false); // 안보일래?
 
   useEffect(() => {
-    // first check history
+    // 최초에 history 체크
     const pathname = history.location.pathname;
     if (pathname !== "/") {
-      // !main
-      setIsUnmouse(true); // point events none
-      setIsNone(true); // hide
-      //
+      // 메인이 아닌경우
+      setIsUnmouse(true); // 액션 막음
+      setIsNone(true); // 사라짐
+      // 안보이지만 사라져야 다시 나타날때 애니메이션으로 나타남
       EventEmitter.dispatch(Event.CHANGE_NAV_STATE, false);
     }
   }, []);
 
   useEffect(() => {
+    console.log("useEffect1");
     const pathname = history.location.pathname;
     if (pathname === "/") {
       EventEmitter.dispatch(Event.CHANGE_NAV_STATE, true);
-      setIsNone(false); // show
+      setIsNone(false); // 보여짐
       setTimeout(() => {
-        setIsUnmouse(false); // point events
+        setIsUnmouse(false); // 액션가능
       }, 2500);
     } else {
-      // dispatch CHANGE_NAV_STATE only when the previous state is 'home'
-      //      if call everytime every run particle animation
+      // 직전 state가 home인경우만 CHANGE_NAV_STATE 발생
+      // 매번 발생하게되면 파티클 애니메이션이 계속 실행됨
       if (prevPath === "/") {
-        setIsUnmouse(true); // point events none
+        setIsUnmouse(true); // 액션막음
         setTimeout(() => {
-          setIsNone(true); // hide
+          setIsNone(true); // 안보여짐
         }, 2500);
         EventEmitter.dispatch(Event.CHANGE_NAV_STATE, false);
       }
@@ -59,16 +61,16 @@ const Nav = () => {
     >
       <div>
         <Link className="menu" to="/career" onClick={onClick}>
-          <NavTextLabel letter="Career" />
+          <MenuButton letter="Career" />
         </Link>
         <Link className="menu" to="/experience" onClick={onClick}>
-          <NavTextLabel letter="Experience" />
+          <MenuButton letter="Experience" />
         </Link>
         <Link className="menu" to="/playground" onClick={onClick}>
-          <NavTextLabel letter="Playground" />
+          <MenuButton letter="Playground" />
         </Link>
         <Link className="menu" to="/me" onClick={onClick}>
-          <NavTextLabel letter="Me" />
+          <MenuButton letter="Me" />
         </Link>
       </div>
     </div>

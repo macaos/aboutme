@@ -1,12 +1,30 @@
+import React, { useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Cubic, TweenLite } from "gsap";
-import React, { useRef, useState } from "react";
 
 const Header = () => {
   const history = useHistory();
   const elThis = useRef(null);
-  const [headerState] = useState("main"); // main, sub
-
+  const [headerState, setHeaderState] = useState("main"); // main, sub
+  useEffect(() => {
+    const pathname = history.location.pathname;
+    if (pathname === "/") {
+      setHeaderState("main");
+      TweenLite.to(elThis.current, 0.7, {
+        y: 0,
+        opacity: 1,
+        ease: Cubic.easeInOut
+      });
+    } else {
+      setHeaderState("sub");
+      TweenLite.to(elThis.current, 0.7, {
+        y: -27,
+        opacity: 0.1,
+        ease: Cubic.easeInOut
+      });
+    }
+    // }, 1000);
+  }, [history.location.pathname]);
   return (
     <div className="view-Header">
       <div

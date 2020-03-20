@@ -1,6 +1,7 @@
 import React, { Fragment, useRef, useEffect } from "react";
 import { Cubic, TweenLite } from "gsap";
 import EventEmitter, { Event } from "../../utils/EventEmitter";
+import { useHistory } from "react-router-dom";
 
 interface TextLabelProps {
   letter: string;
@@ -52,7 +53,6 @@ const TextLabel = (props: TextLabelProps) => {
     let i: number = 0;
     for (i = 0; i < refList.length; i++) {
       const t: number = +(2 * Math.random()).toFixed(1) + 1.5;
-      //   const posY: number = +(200 * Math.random()).toFixed(1) + 400;
       TweenLite.to(refList[i].current, t, {
         y: 0,
         alpha: 1,
