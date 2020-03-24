@@ -136,3 +136,32 @@
     }
   }
 }
+
+.view-Playground {
+  .playground-item {
+    padding-top: 200px;
+    transition: padding-top 0.9s cubic-bezier(0.05, 0.6, 0.42, 0.95),
+      opacity 0.9s;
+    opacity: 0;
+    &.on {
+      padding-top: 0;
+      opacity: 1;
+    }
+    .iframe {
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+}
+
+.view-PlaygroundItem {
+  margin: 0 1rem 2rem;
+  .title {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  .tag {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+}

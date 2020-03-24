@@ -1,7 +1,176 @@
-import React from "react";
+import React, {
+  Component,
+  useState,
+  lazy,
+  Suspense,
+  Fragment,
+  useEffect
+} from "react";
+import PlaygroundItem from "./Components/PlaygroundItem";
+import { Route, Link, Redirect } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import P001 from "./playground/P001";
+import P002 from "./playground/P002";
+import P003 from "./playground/P003";
+import P004 from "./playground/P004";
+import P005 from "./playground/P005";
+import P006 from "./playground/P006";
+import P007 from "./playground/P007";
+import P008 from "./playground/P008";
 
-const Playground = () => {
-  return <div></div>;
-};
+class Playground extends Component {
+  private history = createBrowserHistory();
+  private playgroundList = getPlaygroundList();
+  public state = {
+    pageIdx: 1,
+    redirectTo: ""
+  };
+
+  componentDidMount() {
+    this.history.listen((location: any, action: any) => {
+      this.changePageIdxToHistory();
+    });
+    console.log("history", this.history);
+    this.changePageIdxToHistory();
+  }
+  changePageIdxToHistory() {
+    this.history = createBrowserHistory();
+    const { pathname } = this.history.location;
+    let redirectTo = "";
+    let pageIdx: number = parseInt(pathname.substring(pathname.length - 1));
+    // if (!pageIdx)
+    if (!pageIdx) {
+      setTimeout(() => {
+        pageIdx = 1;
+        // this.history.push("/playground/1");
+
+        // this.context.router.history.push("/playground/1");
+        // this.props.history.push();
+        redirectTo = "/playground/1";
+        this.changePageIdx(pageIdx, redirectTo);
+      });
+    } else {
+      this.changePageIdx(pageIdx, redirectTo);
+    }
+    console.log("getNextPageIdx", this.history, pathname, pageIdx);
+  }
+  changePageIdx(idx: number, redirectTo: string) {
+    this.setState({
+      ...this.state,
+      pageIdx: idx,
+      redirectTo: redirectTo
+    });
+  }
+  getForwardPageIdx(): number {
+    const currentPageIdx = this.state.pageIdx;
+    if (currentPageIdx >= this.playgroundList.length) {
+      return 1;
+    } else {
+      return currentPageIdx + 1;
+    }
+  }
+  getBackPageIdx(): number {
+    const currentPageIdx = this.state.pageIdx;
+    if (currentPageIdx <= 1) {
+      return this.playgroundList.length;
+    } else {
+      return currentPageIdx - 1;
+    }
+  }
+
+  render() {
+    console.log("render");
+    return (
+      <div className="view-modal view-Playground">
+        <div className="playground-header">header</div>
+        <div className="playground-contents">
+          <Route path="/playground/1" component={P001} />
+          <Route path="/playground/2" component={P002} />
+          <Route path="/playground/3" component={P003} />
+          <Route path="/playground/4" component={P004} />
+          <Route path="/playground/5" component={P005} />
+          <Route path="/playground/6" component={P006} />
+          <Route path="/playground/7" component={P007} />
+        </div>
+        <div className="playground-footer">
+          {/* <Link to="/" className="icon-home"></Link> */}
+          <div className="playnavi float-right">
+            {this.state.redirectTo !== "" && (
+              <Redirect to={this.state.redirectTo} />
+            )}
+            <Link
+              to={`/playground/${this.getBackPageIdx()}`}
+              onClick={() => {
+                setTimeout(() => {
+                  this.changePageIdxToHistory();
+                });
+              }}
+            >
+              이전
+            </Link>
+            <button onClick={() => {}}>3/20 더보기</button>
+            <Link
+              to={`/playground/${this.getForwardPageIdx()}`}
+              onClick={() => {
+                setTimeout(() => {
+                  this.changePageIdxToHistory();
+                });
+              }}
+            >
+              다음
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+function getPlaygroundList(): any[] {
+  return [
+    {
+      title: "list drag & change order",
+      tag: ["prototype"],
+      key: "pbrwbjhcfg",
+      detail: "P001"
+    },
+    {
+      title: "wireframe",
+      tag: ["css"],
+      key: "ayevqwosfp",
+      detail: "P002"
+    },
+    {
+      title: "3d card",
+      tag: ["test"],
+      key: "mzhkxustty",
+      detail: "P003"
+    },
+    {
+      title: "sentense progress",
+      tag: ["css"],
+      key: "nkpkjdrmnr",
+      detail: "P004"
+    },
+    {
+      title: "navigation",
+      tag: ["prototype"],
+      key: "vmctjxayaz",
+      detail: "P005"
+    },
+    {
+      title: "svg filter & drag",
+      tag: ["filter"],
+      key: "txzrgznlts",
+      detail: "P006"
+    },
+    {
+      title: "flip 3d card",
+      tag: ["test"],
+      key: "gtiwwdwfsm",
+      detail: "P007"
+    }
+  ];
+}
 
 export default Playground;
