@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import classnames from "classnames";
 
 const Me = () => {
-  return <div>Me</div>;
+  const [isOn, setIsOn] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsOn(true);
+    }, 500);
+  }, []);
+  return <ul className={classnames(["depth1 view-Me", { on: isOn }])}>MEME</ul>;
 };
 
 export default Me;
