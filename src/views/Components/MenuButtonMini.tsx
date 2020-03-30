@@ -8,19 +8,13 @@ interface IMenuButtonMiniProps {
 const MenuButtonMini = (props: IMenuButtonMiniProps) => {
   const [menuName, setMenuName] = useState(props.label);
   const activeClass = (() => {
-    console.log(
-      "menuName",
-      menuName.toLowerCase(),
-      "props.activeName",
-      props.activeName.toLowerCase()
-    );
     if (menuName.toLowerCase() === props.activeName.toLowerCase()) {
       return " active";
     } else {
       return "";
     }
   })();
-  //   console.log("activeClass", activeClass);
+
   return (
     <div
       className={`text-label${activeClass}`}

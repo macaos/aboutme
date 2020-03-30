@@ -75,7 +75,9 @@ class NavMini extends Component<INavMiniProps, INavMiniState> {
     return (
       <div className="view-NavMini">
         <div className="labels">
-          <Link to="/" className="icon-home"></Link>
+          <Link to="/" className="icon-home">
+            H
+          </Link>
           <Link to="/Career">
             <MenuButtonMini
               label="Career"
