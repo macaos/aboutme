@@ -7,6 +7,7 @@ type IEvent = {
 export class Event implements IEvent {
   public static CHANGE_HISTORY: string = "changeHistory";
   public static CHANGE_NAV_STATE: string = "changeNavState";
+  public static CLICK_NAV_MINI: string = "clickNavMini";
 
   public events: any = {};
   public dispatch(event: string, data?: any): void {

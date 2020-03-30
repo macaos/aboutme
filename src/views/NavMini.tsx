@@ -60,6 +60,7 @@ class NavMini extends Component<INavMiniProps, INavMiniState> {
   }
 
   public onManuClick = (name: string): void => {
+    EventEmitter.dispatch(Event.CLICK_NAV_MINI, name);
     setTimeout(() => {
       this.setActiveName();
     });

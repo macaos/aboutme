@@ -65,9 +65,34 @@
 .view-NavMini {
   position: fixed;
   bottom: 0;
-  .text-label {
-    &.active {
-      font-weight: bold;
+  margin-left: 1px;
+
+  .button {
+    font-size: 30px;
+    font-weight: 800;
+    background-color: rgb(176, 176, 187);
+    padding: 3px 10px;
+    margin-bottom: 1px;
+    &.show-all {
+      .label-body {
+        // display: inline-block;
+        opacity: 1;
+        // width: auto;
+      }
+    }
+    .label-header {
+      display: inline-block;
+      &.active {
+        color: #ff0000;
+      }
+    }
+    .label-body {
+      display: inline-block;
+      //   display: none;
+      //   overflow: hidden;
+      //   width: 0;
+      opacity: 0;
+      transition: opacity 2s;
     }
   }
 }
