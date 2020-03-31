@@ -3,16 +3,14 @@ import MenuButtonMini from "./Components/MenuButtonMini";
 import { createBrowserHistory } from "history";
 import { Link } from "react-router-dom";
 import EventEmitter, { Event } from "../utils/EventEmitter";
+import classnames from "classnames";
 
 interface INavMiniProps {}
 interface INavMiniState {}
 
 class NavMini extends Component<INavMiniProps, INavMiniState> {
   private history = createBrowserHistory();
-  private menu1: any = null;
-  private menu2: any = null;
-  private menu3: any = null;
-  private menu4: any = null;
+
   public state = {
     activeName: ""
   };
@@ -33,6 +31,7 @@ class NavMini extends Component<INavMiniProps, INavMiniState> {
       ...this.state,
       activeName: activeName
     });
+    console.log("activeNameactiveName", activeName);
     if (activeName === "") {
       // 사라짐
     } else {
@@ -73,41 +72,34 @@ class NavMini extends Component<INavMiniProps, INavMiniState> {
     });
   }
   render() {
+    const n: string = this.state.activeName;
     return (
       <div className="view-NavMini">
-        <div className="labels">
-          <Link to="/" className="icon-home">
-            H
-          </Link>
-          <Link to="/Career">
-            <MenuButtonMini
-              label="Career"
-              clickHandler={this.onManuClick}
-              activeName={this.state.activeName}
-            />
-          </Link>
-          <Link to="/Experience">
-            <MenuButtonMini
-              label="Experience"
-              clickHandler={this.onManuClick}
-              activeName={this.state.activeName}
-            />
-          </Link>
-          <Link to="/Playground">
-            <MenuButtonMini
-              label="Playground"
-              clickHandler={this.onManuClick}
-              activeName={this.state.activeName}
-            />
-          </Link>
-          <Link to="/Me">
-            <MenuButtonMini
-              label="Me"
-              clickHandler={this.onManuClick}
-              activeName={this.state.activeName}
-            />
-          </Link>
+        <div className="select-lang">
+          <div className="en active">EN</div>
+          <div className="underline"></div>
+          <div className="ko">KO</div>
         </div>
+        <Link to="/" className="btn-menu">
+          <div
+            className={classnames(["line menu1", { active: n === "career" }])}
+          ></div>
+          <div
+            className={classnames([
+              "line menu2",
+              { active: n === "experience" }
+            ])}
+          ></div>
+          <div
+            className={classnames([
+              "line menu3",
+              { active: n === "playground" }
+            ])}
+          ></div>
+          <div
+            className={classnames(["line menu4", { active: n === "me" }])}
+          ></div>
+        </Link>
       </div>
     );
   }

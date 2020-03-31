@@ -64,35 +64,51 @@
 
 .view-NavMini {
   position: fixed;
-  bottom: 0;
-  margin-left: 1px;
+  bottom: 10px;
+  left: 10px;
+  padding: 0 5px;
+  font-weight: 600;
+  font-size: 13px;
 
-  .button {
-    font-size: 30px;
-    font-weight: 800;
-    background-color: rgb(176, 176, 187);
-    padding: 3px 10px;
-    margin-bottom: 1px;
-    &.show-all {
-      .label-body {
-        // display: inline-block;
-        opacity: 1;
-        // width: auto;
-      }
+  &.hide {
+    width: 0px;
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .select-lang {
+    margin-bottom: 5rem;
+    .underline {
+      margin: 0.8rem 0;
+      border-bottom: 2px solid #000;
+      width: 2rem;
     }
-    .label-header {
-      display: inline-block;
+    .active {
+      color: red;
+    }
+  }
+  .btn-menu {
+    display: inline-block;
+    margin-right: 0.5rem;
+    .line {
+      background-color: #000;
+      height: 0.4rem;
+      margin-bottom: 0.4rem;
       &.active {
-        color: #ff0000;
+        background-color: red;
       }
     }
-    .label-body {
-      display: inline-block;
-      //   display: none;
-      //   overflow: hidden;
-      //   width: 0;
-      opacity: 0;
-      transition: opacity 2s;
+    .menu1 {
+      width: 1.9rem;
+    }
+    .menu2 {
+      width: 2.5rem;
+    }
+    .menu3 {
+      width: 2.7rem;
+    }
+    .menu4 {
+      width: 1.1rem;
     }
   }
 }
