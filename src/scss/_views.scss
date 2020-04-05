@@ -1,3 +1,5 @@
+@use "functions";
+
 // view-Header
 // ==========================================================================
 .view-Header {
@@ -189,18 +191,40 @@
 }
 
 .view-Playground {
-  .playground-item {
-    padding-top: 200px;
-    transition: padding-top 0.9s cubic-bezier(0.05, 0.6, 0.42, 0.95),
-      opacity 0.9s;
-    opacity: 0;
-    &.on {
-      padding-top: 0;
-      opacity: 1;
-    }
-    .iframe {
+  .playground-header {
+    position: absolute;
+    width: 100%;
+  }
+  .playground-contents {
+    .playground-item {
       width: 100vw;
       height: 100vh;
+      // background-color: blue;
+      // border: 5px solid red;
+      padding-top: 200px;
+      transition: padding-top 0.9s cubic-bezier(0.05, 0.6, 0.42, 0.95),
+        opacity 0.9s;
+      opacity: 0;
+      &.on {
+        padding-top: 0;
+        opacity: 1;
+      }
+      .iframe {
+        width: 100vw;
+        height: 100vh;
+      }
+    }
+  }
+  .playground-footer {
+    // width: 100%;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    .btn-back-forward {
+      @include dotBackground;
+      width: 4rem;
+      height: 4rem;
+      display: inline-block;
     }
   }
 }

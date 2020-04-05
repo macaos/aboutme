@@ -9,6 +9,7 @@ import React, {
 import PlaygroundItem from "./Components/PlaygroundItem";
 import { Route, Link, Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import { css } from "emotion";
 import P001 from "./playground/P001";
 import P002 from "./playground/P002";
 import P003 from "./playground/P003";
@@ -98,6 +99,20 @@ class Playground extends Component {
             {this.state.redirectTo !== "" && (
               <Redirect to={this.state.redirectTo} />
             )}
+
+            <button
+              onClick={() => {}}
+              className={css`
+                width: 4rem;
+                height: 4rem;
+                background-color: blue;
+                display: inline-block;
+                border: 0;
+              `}
+            >
+              3/20
+            </button>
+            <br></br>
             <Link
               to={`/playground/${this.getBackPageIdx()}`}
               onClick={() => {
@@ -105,10 +120,11 @@ class Playground extends Component {
                   this.changePageIdxToHistory();
                 });
               }}
+              className="btn-back-forward"
             >
               이전
             </Link>
-            <button onClick={() => {}}>3/20 더보기</button>
+            <br></br>
             <Link
               to={`/playground/${this.getForwardPageIdx()}`}
               onClick={() => {
@@ -116,6 +132,12 @@ class Playground extends Component {
                   this.changePageIdxToHistory();
                 });
               }}
+              className={css`
+                width: 4rem;
+                height: 4rem;
+                background-color: blue;
+                display: inline-block;
+              `}
             >
               다음
             </Link>

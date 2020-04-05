@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import classnames from "classnames";
+import { css } from "emotion";
 
 const P001 = () => {
   const [isOn, setIsOn] = useState(false);
@@ -9,7 +10,16 @@ const P001 = () => {
     }, 500);
   }, []);
   return (
-    <div className={classnames(["playground-item", { on: isOn }])}>P001</div>
+    <div
+      className={classnames(
+        css`
+          background-color: white;
+        `,
+        ["playground-item", { on: isOn }]
+      )}
+    >
+      P001
+    </div>
   );
 };
 
