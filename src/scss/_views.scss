@@ -65,12 +65,12 @@
 }
 
 .view-NavMini {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  padding: 0 5px;
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
+  padding: 0 0.5rem;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 1.3rem;
 
   &.hide {
     width: 0px;
@@ -218,13 +218,41 @@
   .playground-footer {
     // width: 100%;
     position: absolute;
-    bottom: 1rem;
+    bottom: 2rem;
     right: 1rem;
-    .btn-back-forward {
-      @include dotBackground;
-      width: 4rem;
-      height: 4rem;
+    .num-nav {
       display: inline-block;
+      border: 0;
+      text-decoration: underline;
+      margin-left: -2rem;
+      font-weight: 500;
+    }
+    .btn-back-forward {
+      // @include dotBackground;
+      // width: 4rem;
+      // height: 4rem;
+      // display: inline-block;
+
+      border: solid black;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 0.6rem;
+      position: relative;
+
+      &.forward {
+        transform: rotate(135deg);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+      &.back {
+        // margin-right: -0.7rem;
+        // margin-bottom: 0.5rem;
+
+        margin-left: -0.7rem;
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+        transform: rotate(-45deg);
+      }
     }
   }
 }

@@ -100,18 +100,17 @@ class Playground extends Component {
               <Redirect to={this.state.redirectTo} />
             )}
 
-            <button
-              onClick={() => {}}
-              className={css`
-                width: 4rem;
-                height: 4rem;
-                background-color: blue;
-                display: inline-block;
-                border: 0;
-              `}
+            <Link
+              to={`/playground/${this.getForwardPageIdx()}`}
+              onClick={() => {
+                setTimeout(() => {
+                  this.changePageIdxToHistory();
+                });
+              }}
+              className="btn-back-forward back"
             >
-              3/20
-            </button>
+              {/* 다음 */}
+            </Link>
             <br></br>
             <Link
               to={`/playground/${this.getBackPageIdx()}`}
@@ -120,27 +119,14 @@ class Playground extends Component {
                   this.changePageIdxToHistory();
                 });
               }}
-              className="btn-back-forward"
+              className="btn-back-forward forward"
             >
-              이전
+              {/* 이전 */}
             </Link>
             <br></br>
-            <Link
-              to={`/playground/${this.getForwardPageIdx()}`}
-              onClick={() => {
-                setTimeout(() => {
-                  this.changePageIdxToHistory();
-                });
-              }}
-              className={css`
-                width: 4rem;
-                height: 4rem;
-                background-color: blue;
-                display: inline-block;
-              `}
-            >
-              다음
-            </Link>
+            <button onClick={() => {}} className="num-nav">
+              3/20
+            </button>
           </div>
         </div>
       </div>
