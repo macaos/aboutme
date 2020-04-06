@@ -18,6 +18,8 @@ import P005 from "./playground/P005";
 import P006 from "./playground/P006";
 import P007 from "./playground/P007";
 import P008 from "./playground/P008";
+import arrowLeft from "../assets/angle-left.svg";
+import arrowRight from "../assets/angle-right.svg";
 
 class Playground extends Component {
   private history = createBrowserHistory();
@@ -107,9 +109,10 @@ class Playground extends Component {
                   this.changePageIdxToHistory();
                 });
               }}
-              className="btn-back-forward back"
+              className="btn-back-forward back icon-angle-left"
             >
               {/* 다음 */}
+              {/* <img src={arrowRight}></img> */}
             </Link>
             <br></br>
             <Link
@@ -119,9 +122,10 @@ class Playground extends Component {
                   this.changePageIdxToHistory();
                 });
               }}
-              className="btn-back-forward forward"
+              className="btn-back-forward forward icon-angle-right"
             >
               {/* 이전 */}
+              {/* <img src={arrowLeft}></img> */}
             </Link>
             <br></br>
             <button onClick={() => {}} className="num-nav">
