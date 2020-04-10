@@ -101,33 +101,34 @@ class Playground extends Component {
             {this.state.redirectTo !== "" && (
               <Redirect to={this.state.redirectTo} />
             )}
-
-            <Link
-              to={`/playground/${this.getForwardPageIdx()}`}
-              onClick={() => {
-                setTimeout(() => {
-                  this.changePageIdxToHistory();
-                });
-              }}
-              className="btn-back-forward back icon-angle-left"
-            >
-              {/* 다음 */}
-              {/* <img src={arrowRight}></img> */}
-            </Link>
-            <br></br>
-            <Link
-              to={`/playground/${this.getBackPageIdx()}`}
-              onClick={() => {
-                setTimeout(() => {
-                  this.changePageIdxToHistory();
-                });
-              }}
-              className="btn-back-forward forward icon-angle-right"
-            >
-              {/* 이전 */}
-              {/* <img src={arrowLeft}></img> */}
-            </Link>
-            <br></br>
+            <div className="btns">
+              <Link
+                to={`/playground/${this.getForwardPageIdx()}`}
+                onClick={() => {
+                  setTimeout(() => {
+                    this.changePageIdxToHistory();
+                  });
+                }}
+                className="btn-back-forward back icon-angle-left"
+              >
+                {/* 다음 */}
+                {/* <img src={arrowRight}></img> */}
+              </Link>
+            </div>
+            <div className="btns">
+              <Link
+                to={`/playground/${this.getBackPageIdx()}`}
+                onClick={() => {
+                  setTimeout(() => {
+                    this.changePageIdxToHistory();
+                  });
+                }}
+                className="btn-back-forward forward icon-angle-right"
+              >
+                {/* 이전 */}
+                {/* <img src={arrowLeft}></img> */}
+              </Link>
+            </div>
             <button onClick={() => {}} className="num-nav">
               3/20
             </button>
