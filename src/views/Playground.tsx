@@ -20,6 +20,7 @@ import P007 from "./playground/P007";
 import P008 from "./playground/P008";
 import arrowLeft from "../assets/angle-left.svg";
 import arrowRight from "../assets/angle-right.svg";
+import Pagination from "./Components/Pagination";
 
 class Playground extends Component {
   private history = createBrowserHistory();
@@ -124,14 +125,9 @@ class Playground extends Component {
                   });
                 }}
                 className="btn-back-forward forward icon-angle-right"
-              >
-                {/* 이전 */}
-                {/* <img src={arrowLeft}></img> */}
-              </Link>
+              ></Link>
             </div>
-            <button onClick={() => {}} className="num-nav">
-              3/20
-            </button>
+            <Pagination currentPage={9} totalPages={24} />
           </div>
         </div>
       </div>

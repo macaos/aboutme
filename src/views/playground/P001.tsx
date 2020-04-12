@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classnames from "classnames";
 import { css } from "emotion";
+import Pagination from "../Components/Pagination";
 
 const P001 = () => {
   const [isOn, setIsOn] = useState(false);
@@ -19,6 +20,7 @@ const P001 = () => {
       )}
     >
       P001
+      <Pagination currentPage={9} totalPages={24} />
     </div>
   );
 };
