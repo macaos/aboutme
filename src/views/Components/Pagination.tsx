@@ -20,9 +20,10 @@ const Pagination = ({
     <div
       className={css`
         label: pagination-wrapper;
-        width: 30px;
+        width: 40px;
         border: 1px solid #99999900;
         display: inline-block;
+        text-align: center;
       `}
     >
       <RollingNumber
@@ -35,19 +36,18 @@ const Pagination = ({
           label: diagonal-line;
           position: relative;
           z-index: 1;
-          width: 30px;
-          margin-top: -10px;
+          width: 18px;
+          margin-left: 12px;
           left: 0px;
           height: 1px;
           background-color: #000;
-          transform: rotate(-55deg);
+          transform: rotate(-46deg);
         `}
       ></div>
       <div
         className={css`
           label: total-num;
-          margin-top: 4px;
-          margin-left: 10px;
+          margin-top: 8px;
         `}
       >
         {RollingNumbers}

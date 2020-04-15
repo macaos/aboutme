@@ -9,7 +9,9 @@ const P002 = () => {
     }, 500);
   }, []);
   return (
-    <div className={classnames(["playground-item", { on: isOn }])}>P002</div>
+    <div className={classnames(["item-002", "playground-item", { on: isOn }])}>
+      P002
+    </div>
   );
 };
 

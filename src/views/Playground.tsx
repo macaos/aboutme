@@ -27,8 +27,14 @@ class Playground extends Component {
   private playgroundList = getPlaygroundList();
   public state = {
     pageIdx: 1,
+    pageTotal: 21,
     redirectTo: ""
   };
+
+  constructor(props: {}) {
+    super(props);
+    this.state.pageTotal = 17; //this.playgroundList.length;
+  }
 
   componentDidMount() {
     this.history.listen((location: any, action: any) => {
@@ -104,7 +110,7 @@ class Playground extends Component {
             )}
             <div className="btns">
               <Link
-                to={`/playground/${this.getForwardPageIdx()}`}
+                to={`/playground/${this.getBackPageIdx()}`}
                 onClick={() => {
                   setTimeout(() => {
                     this.changePageIdxToHistory();
@@ -118,7 +124,7 @@ class Playground extends Component {
             </div>
             <div className="btns">
               <Link
-                to={`/playground/${this.getBackPageIdx()}`}
+                to={`/playground/${this.getForwardPageIdx()}`}
                 onClick={() => {
                   setTimeout(() => {
                     this.changePageIdxToHistory();
@@ -127,7 +133,10 @@ class Playground extends Component {
                 className="btn-back-forward forward icon-angle-right"
               ></Link>
             </div>
-            <Pagination currentPage={9} totalPages={24} />
+            <Pagination
+              currentPage={this.state.pageIdx}
+              totalPages={this.state.pageTotal}
+            />
           </div>
         </div>
       </div>

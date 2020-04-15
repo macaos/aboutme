@@ -22,6 +22,15 @@ class NavMini extends Component<INavMiniProps, INavMiniState> {
         this.setActiveName();
       });
     });
+
+    // Color Change Trigger
+    EventEmitter.subscribe(Event.CHANGE_PLAYGROUND_COLOR, (inData: any) => {
+      inData = {
+        txtColor: "#FFF",
+        txtMidColor: "#444",
+        txtActiveColor: "#FF0000"
+      };
+    });
   }
 
   private setActiveName() {
@@ -77,7 +86,7 @@ class NavMini extends Component<INavMiniProps, INavMiniState> {
       <div className="view-NavMini">
         <div className="select-lang">
           <div className="en active">EN</div>
-          <div className="underline"></div>
+          <div className={classnames(["underline"])}></div>
           <div className="ko">KO</div>
         </div>
         <Link to="/" className="btn-menu">
