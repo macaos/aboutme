@@ -2,13 +2,14 @@
 @import "base";
 
 .wrapper {
-    padding: 1rem;
+    padding: 2rem;
 }
 .logo {
     display: flex;
     justify-content: space-between;
     font-weight: 700;
     margin-top: 1rem;
+    margin-bottom: 10rem;
 }
 
 .btn-tag {
@@ -17,8 +18,10 @@
     padding: 0.3rem 0.7rem 0.4rem;
     border-radius: 0.7rem;
     font-size: 1.1rem;
-    border: 1px solid rgb(189, 188, 188);
+    border: 1px solid rgb(228, 228, 228);
     color: #999;
+    background-color: rgb(245, 245, 245);
+    margin-right: 0.5rem;
 
     &.large {
         padding: 1rem 2rem;
@@ -29,10 +32,12 @@
 }
 
 .view {
+    margin-bottom: 6rem;
     h2 {
         font-size: 3rem;
-        font-weight: bold;
+        font-weight: 600;
         letter-spacing: -0.1rem;
+        margin-bottom: 3rem;
     }
     // &-tags {
     //     .btn-tag {
@@ -45,19 +50,19 @@
     //     }
     // }
     &-career {
-        margin-bottom: 4rem;
         .items {
             .item {
                 margin-bottom: 3rem;
                 .name {
-                    font-size: 2.5rem;
-                    font-weight: 500;
+                    font-size: 2.3rem;
+                    font-weight: 600;
                     letter-spacing: -0.1rem;
                     margin-bottom: 1rem;
                 }
-                .part {
+                .position {
                     color: #8d8d8a;
                     margin-bottom: 1.3rem;
+
                     .year {
                         color: #bebebc;
                         margin-left: 1rem;
