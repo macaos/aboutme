@@ -1,0 +1,72 @@
+@import "reset";
+@import "base";
+
+.wrapper {
+    padding: 1rem;
+}
+.logo {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.btn-tag {
+    // background-color: aquamarine;
+    display: inline-block;
+    padding: 0.3rem 0.7rem 0.4rem;
+    border-radius: 0.7rem;
+    font-size: 1.1rem;
+    border: 1px solid rgb(189, 188, 188);
+    color: #999;
+
+    &.large {
+        padding: 1rem 2rem;
+        font-weight: bold;
+        font-size: 2rem;
+        border-radius: 2rem;
+    }
+}
+
+.view {
+    h2 {
+        font-size: 3rem;
+        font-weight: bold;
+        letter-spacing: -0.1rem;
+    }
+    // &-tags {
+    //     .btn-tag {
+    //         background-color: aquamarine;
+    //         display: inline-block;
+    //         padding: 1rem 2rem;
+    //         font-weight: bold;
+    //         font-size: 2rem;
+    //         border-radius: 2rem;
+    //     }
+    // }
+    &-career {
+        margin-bottom: 4rem;
+        .items {
+            .item {
+                margin-bottom: 3rem;
+                .name {
+                    font-size: 2.5rem;
+                    font-weight: 500;
+                    letter-spacing: -0.1rem;
+                    margin-bottom: 1rem;
+                }
+                .part {
+                    color: #8d8d8a;
+                    margin-bottom: 1.3rem;
+                    .year {
+                        color: #bebebc;
+                        margin-left: 1rem;
+                    }
+                }
+            }
+        }
+    }
+    &-works {
+        margin-bottom: 4rem;
+    }
+}
