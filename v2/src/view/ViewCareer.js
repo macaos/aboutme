@@ -39,9 +39,6 @@ class ViewCareer {
         })
         this.$items.innerHTML = html;
     }
-
-
-
 }
 
 export default new ViewCareer();
