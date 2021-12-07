@@ -13,7 +13,6 @@
 }
 
 .btn-tag {
-    // background-color: aquamarine;
     display: inline-block;
     padding: 0.3rem 0.7rem 0.4rem;
     border-radius: 0.7rem;
@@ -29,10 +28,32 @@
         font-size: 2rem;
         border-radius: 2rem;
     }
+    &.work {
+        padding: 0.2rem 0.5rem 0.3rem;
+        border-radius: 0.3rem;
+        font-weight: bold;
+        &.ko {
+            font-family: "Noto Sans";
+        }
+    }
 }
 
+.btn-tag-filter {
+    display: inline-block;
+    padding: 0.3rem 0.5rem 0.5rem 0.2rem;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    border: 1px solid rgb(228, 228, 228);
+    color: #999;
+    background-color: rgb(245, 245, 245);
+    margin-right: 0.5rem;
+}
+
+.float-flex {
+    display: flex;
+}
 .view {
-    margin-bottom: 6rem;
+    margin-bottom: 10rem;
     h2 {
         font-size: 3rem;
         font-weight: 600;
@@ -49,29 +70,58 @@
     //         border-radius: 2rem;
     //     }
     // }
-    &-career {
-        .items {
-            .item {
-                margin-bottom: 3rem;
-                .name {
-                    font-size: 2.3rem;
-                    font-weight: 600;
-                    letter-spacing: -0.1rem;
-                    margin-bottom: 1rem;
-                }
-                .position {
-                    color: #8d8d8a;
-                    margin-bottom: 1.3rem;
+    .items {
+        .item {
+            margin-bottom: 3rem;
+            .name {
+                font-size: 2.3rem;
+                font-weight: 600;
+                letter-spacing: -0.1rem;
+                margin-bottom: 1rem;
+            }
+            .position {
+                color: #8d8d8a;
+                margin-bottom: 1.3rem;
 
-                    .year {
-                        color: #bebebc;
-                        margin-left: 1rem;
-                    }
+                .year {
+                    color: #bebebc;
+                    margin-left: 1rem;
                 }
             }
         }
     }
-    &-works {
-        margin-bottom: 4rem;
+    &-career {
     }
+    &-works {
+        .year {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .group-year {
+            .group-month {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1rem;
+                .month {
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    margin-left: 0.2rem;
+                    width: 2rem;
+                    // float: left;
+                }
+
+                .title {
+                    font-family: "Noto Sans";
+                    font-size: 1.4rem;
+                    // float: left;
+                    // font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    // margin-bottom: 1rem;
 }

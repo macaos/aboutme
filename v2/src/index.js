@@ -3,6 +3,8 @@ import htmlMain from './view/main.html';
 import data from './view/Data';
 import ViewCareer from './view/ViewCareer';
 import Utils from './modules/Utils';
+import ViewSkills from './view/ViewSkills';
+import ViewWorks from './view/ViewWorks';
 
 
 
@@ -36,6 +38,8 @@ function insertWrapper() {
 
 function init() {
     ViewCareer.init();
+    ViewSkills.init();
+    ViewWorks.init();
     bindElement();
     addEvent();
     // initUI();
