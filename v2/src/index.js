@@ -5,6 +5,7 @@ import ViewCareer from './view/ViewCareer';
 import Utils from './modules/Utils';
 import ViewSkills from './view/ViewSkills';
 import ViewWorks from './view/ViewWorks';
+import ViewHeader from './view/ViewHeader';
 
 
 
@@ -40,6 +41,7 @@ function init() {
     ViewCareer.init();
     ViewSkills.init();
     ViewWorks.init();
+    ViewHeader.init();
     bindElement();
     addEvent();
     // initUI();

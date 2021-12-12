@@ -48,7 +48,7 @@ class Data {
         return [
             {
                 name: 'Now',
-                tags: ['Javascript', 'Typescript', 'React']
+                tags: ['Javascript', 'Typescript', 'React', 'SCSS', 'HTML']
             },
             {
                 name: 'Used',
@@ -69,7 +69,8 @@ class Data {
                     {
                         month: '11',
                         name: '토스 실손보험',
-                        category: ['보험'],
+                        category: ['보험', 'Framework'],
+                        skill: ['Javascript', 'HTML', 'SCSS']
                     },
                     {
                         month: '7',
@@ -119,7 +120,7 @@ class Data {
                     {
                         month: '5',
                         name: '해외여행보험 키오스크( 인천공항 보험 데스크 )',
-                        category: ['보험', '키오스크'],
+                        category: ['보험', '키오스크', 'Framework'],
                     },
                     {
                         month: '5',
