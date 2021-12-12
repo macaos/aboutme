@@ -112,6 +112,14 @@ main {
     }
     &-plays {
         margin-bottom: 3rem;
+        .items {
+            .item {
+                margin-bottom: 1rem;
+                .title {
+                    display: inline-block;
+                }
+            }
+        }
     }
 
     &-works {
