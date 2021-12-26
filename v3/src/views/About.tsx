@@ -8,9 +8,20 @@ const About = () => {
     const CompItem = data.careerInfo.map((item: any, i: number) => {
         return <li className="item">
             <div className="name">
-                <div>Samsung Fire</div>
+                <div>{item.name}</div>
             </div>
-            <div className="part">{item.name}<span className="year">{item.period}</span></div>
+            <div className="part">{item.part}<span className="year">{item.period}</span></div>
+            <div className="skill">
+                <Tags type={'skill'} items={item.tags} />
+            </div>
+        </li>
+    })
+
+    const CompSkillItem = data.skillsInfo.map((item: any, i: number) => {
+        return <li className="item">
+            <div className="name">
+                <div>{item.name}</div>
+            </div>
             <div className="skill">
                 <Tags type={'skill'} items={item.tags} />
             </div>
@@ -19,7 +30,19 @@ const About = () => {
     return (
         <div>
             <Header />
-            {CompItem}
+            <div>
+                I'm UI/UX Developer.
+            </div>
+            <h2 className="page-tit">🧗 Career</h2>
+            <ul>
+                {CompItem}
+            </ul>
+
+            <h2 className="page-tit">🧗 Skill</h2>
+            <ul>
+                {CompSkillItem}
+            </ul>
+
         </div>
     );
 };
