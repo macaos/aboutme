@@ -156,13 +156,37 @@ main {
             }
         }
     }
-    &-plays {
+    &-playground {
+        padding: 2rem;
         margin-bottom: 3rem;
         .items {
             .item {
                 margin-bottom: 1rem;
                 .title {
                     display: inline-block;
+                }
+            }
+        }
+    }
+
+    &-about {
+        padding: 2rem;
+        .introduce {
+            margin-top: 15rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .items {
+            .item {
+                margin-bottom: 4rem;
+                .name {
+                    font-size: 2.3rem;
+                    font-weight: 600;
+                    letter-spacing: -0.1rem;
+                    margin-bottom: 1rem;
+                }
+                .part {
+                    margin-bottom: 1rem;
                 }
             }
         }

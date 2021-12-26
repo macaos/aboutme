@@ -28,18 +28,18 @@ const About = () => {
         </li>
     })
     return (
-        <div>
+        <div className="view-about">
             <Header />
-            <div>
+            <div className="introduce">
                 I'm UI/UX Developer.
             </div>
             <h2 className="page-tit">🧗 Career</h2>
-            <ul>
+            <ul className="items">
                 {CompItem}
             </ul>
 
             <h2 className="page-tit">🧗 Skill</h2>
-            <ul>
+            <ul className="items">
                 {CompSkillItem}
             </ul>
 
