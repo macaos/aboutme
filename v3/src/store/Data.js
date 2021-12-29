@@ -1,4 +1,14 @@
 class Data {
+    get pattenInfo() {
+        return {
+            Ptn01: {
+                gridType: 'grid',
+                bgColors: ['#DBD7D4'],
+                colors: ['#6FA79C', '#E5A179', '#468C42', '#D7A43A', '#835272', '#93937C', '#A76C2C'],
+                itemType: ['rect', 'box', 'pill'],
+            }
+        }
+    }
     get playgroundInfo() {
         return [
             {

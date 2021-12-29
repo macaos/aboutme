@@ -31,7 +31,7 @@ const About = () => {
         <div className="view-about">
             <Header />
             <div className="introduce">
-                I'm UI/UX Developer.
+                I AM UI/UX DEVELOPER
             </div>
             <h2 className="page-tit">🧗 Career</h2>
             <ul className="items">
