@@ -1,0 +1,87 @@
+.Pattern02 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .main-canvas {
+        // mix-blend-mode: lighten;
+        // padding: 4vw;
+        // width: 92vw;
+        // height: 100vh;
+        padding: 10vw;
+        // background-color: #4e6d8b;
+        display: grid;
+        // grid-template-rows: repeat(3, minmax(100px, auto));
+        // grid-auto-rows: minmax(100px, auto);
+        grid-template-columns: repeat(4, 1fr);
+        align-content: center;
+        .item {
+            // border: 1px solid #999;
+            .item-cont {
+                width: 20vw;
+                border-radius: 50%;
+                height: 20vw;
+                transition: all 2s cubic-bezier(0.07, 0.72, 0.5, 1.09);
+                border-width: 10px;
+                // transform: translate(100px, 200px);
+            }
+        }
+    }
+}
+.bg-noise {
+    background: url("https://i.ibb.co/FgcVfGG/bg-noise-1.png"), #1b1c20;
+    background-size: 300px 300px;
+    animation: 250ms steps(10, end) 0s infinite alternate-reverse none running noise-animation;
+    @keyframes noise-animation {
+        0% {
+            background-position: 0% 0%;
+        }
+        10% {
+            background-position: -5% -5%;
+        }
+        20% {
+            background-position: -10% 5%;
+        }
+        30% {
+            background-position: 5% -10%;
+        }
+        40% {
+            background-position: -5% 15%;
+        }
+        50% {
+            background-position: -10% 5%;
+        }
+        60% {
+            background-position: 5% 5%;
+        }
+        70% {
+            background-position: 0% 10%;
+        }
+        80% {
+            background-position: -5% -5%;
+        }
+        90% {
+            background-position: 10% 5%;
+        }
+    }
+}
+.bg-noise1 {
+    background-image: url(https://www.rosogroup.ru/img/noise_n.jpg);
+    content: " ";
+    animation: noise-animate 0.5s steps(10) infinite;
+    opacity: 0.2;
+    background-size: 224px 168px;
+}
+
+@keyframes noise-animate {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+.bg-noise2 {
+    background: transparent url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+    background-repeat: repeat;
+}
