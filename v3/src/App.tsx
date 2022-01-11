@@ -7,11 +7,13 @@ import Experience from './views/Experience';
 import About from './views/About';
 import Pattern01 from './artwork/Pattern01/Pattern01';
 import Pattern02 from './artwork/Pattern02/Pattern02';
+import PatternBaseGrid01 from './artwork/PatternBaseGrid01.scss/PatternBaseGrid01';
 
 function App() {
   return (
     <div className="App">
-      <Pattern02 />
+      <PatternBaseGrid01 />
+      {/* <Pattern02 /> */}
       {/* <About />
       <Playground />
       <Experience /> */}
