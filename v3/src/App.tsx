@@ -12,18 +12,18 @@ import PatternBaseGrid01 from './artwork/PatternBaseGrid01.scss/PatternBaseGrid0
 function App() {
   return (
     <div className="App">
-      <PatternBaseGrid01 />
+      {/* <PatternBaseGrid01 /> */}
       {/* <Pattern02 /> */}
       {/* <About />
       <Playground />
       <Experience /> */}
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Main />} />
         <Route path="play" element={<Playground />} />
         <Route path="experience" element={<Experience />} />
         <Route path="about" element={<About />} />
 
-      </Routes> */}
+      </Routes>
     </div>
   );
 }

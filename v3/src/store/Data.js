@@ -22,6 +22,11 @@ class Data {
                 link: '',
             },
             {
+                name: 'Color Swatches',
+                tags: ['React', 'ColorLib'],
+                link: '/colormaca/',
+            },
+            {
                 name: 'Text Rolling',
                 tags: ['React'],
                 link: '',

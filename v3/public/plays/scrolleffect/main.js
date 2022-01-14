@@ -34,7 +34,7 @@ ready(() => {
     })();
 
     document.querySelector('.btn-common-back').addEventListener('click', () => {
-        document.location.href = '/';
+        document.location.href = '/#/play';
     })
 
     // Update Viewport Height
