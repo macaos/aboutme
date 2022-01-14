@@ -1,0 +1,21 @@
+#poster {
+    background-color: var(--white);
+    border: 2vmin solid var(--black);
+    box-shadow: 0 4vmin 8vmin -4vmin;
+    padding: 4vmin;
+}
+
+#canvas {
+    background: var(--white);
+    display: grid;
+    /* gap: 1vmin; */
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    height: 100%;
+}
+
+#canvas * {
+    transition: 0.3s ease;
+    height: 8vmin;
+    width: 8vmin;
+}

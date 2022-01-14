@@ -17,14 +17,20 @@ class Data {
                 link: '/plays/scrolleffect/',
             },
             {
+                name: 'Color Swatches',
+                tags: ['React', 'ColorLib'],
+                link: '/a_colormaca/',
+            },
+            {
+                name: 'instaphos',
+                tags: ['SVG'],
+                link: '/#/instaphos/',
+            },
+
+            {
                 name: 'Filter Effect',
                 tags: ['SVG'],
                 link: '',
-            },
-            {
-                name: 'Color Swatches',
-                tags: ['React', 'ColorLib'],
-                link: '/colormaca/',
             },
             {
                 name: 'Text Rolling',
