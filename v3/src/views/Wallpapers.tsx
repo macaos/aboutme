@@ -5,6 +5,7 @@ import Wall01 from '../wallpapers/Wall01';
 import Pattern02 from '../artwork/Pattern02/Pattern02';
 import Pattern01 from '../artwork/Pattern01/Pattern01';
 import Wall02 from '../wallpapers/Wall02';
+import PatternBasicLoop01 from '../svgloop/PatternBasicLoop01/PatternBasicLoop01';
 
 const Wallpapers = () => {
     return (
@@ -15,6 +16,9 @@ const Wallpapers = () => {
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}
         >
+            <SwiperSlide>
+                <PatternBasicLoop01 />
+            </SwiperSlide>
             <SwiperSlide>
                 <Wall01 />
             </SwiperSlide>
